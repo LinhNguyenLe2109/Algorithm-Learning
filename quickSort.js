@@ -1,6 +1,6 @@
 const quickSort = (arr, left = 0, right = arr.length -1 ) => {
     if(left < right){
-        let pivotIndex = sort(arr, left);
+        let pivotIndex = sort(arr, left, right);
         quickSort(arr, left, pivotIndex - 1);
         quickSort(arr, pivotIndex + 1, right);
     }
@@ -8,12 +8,11 @@ const quickSort = (arr, left = 0, right = arr.length -1 ) => {
 }
 
 
-function sort (arr, start = 0){
+function sort (arr, start = 0, right = arr.length - 1){
 
     var pivot = arr[start];
-    console.log("pivot: "  + pivot)
     var swapIdx = start;
-    for(let i = start+1; i <arr.length; i++){
+    for(let i = start+1; i <=right; i++){
         if(pivot > arr[i]){
             swapIdx++;
             let temp = arr[i];
@@ -21,11 +20,9 @@ function sort (arr, start = 0){
             arr[swapIdx] = temp;
         }
     }
-    console.log("swapIdx: "  + arr[swapIdx])
     let abc = arr[start];
     arr[start]= arr[swapIdx];
     arr[swapIdx] = abc;
-    console.log(arr);
     return swapIdx;
 }
 
