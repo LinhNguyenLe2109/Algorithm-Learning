@@ -42,4 +42,9 @@ const radixSort = (arr) =>{
 
 }
 
+//although it has 2 for loop, the first for loop is based on the number 
+//of digits of the largest value only. That's why the time complexity is
+// nlogn. The worst condition is when there is a number with infinite
+// digit which rarely happen in real life. I guest this is why this
+//algorithm is popular.
 console.log(radixSort([31,24,65,78,1,34,97,43,587]));
