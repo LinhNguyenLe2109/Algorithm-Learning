@@ -1,18 +1,18 @@
-const quickSort = (arr, left = 0, right = arr.length -1 ) => {
+const quickSort = (arr, left = 0, right = arr.length) => {
     if(left < right){
         let pivotIndex = sort(arr, left, right);
-        quickSort(arr, left, pivotIndex - 1);
+        quickSort(arr, left, pivotIndex);
         quickSort(arr, pivotIndex + 1, right);
     }
     return arr;
 }
 
 
-function sort (arr, start = 0, right = arr.length - 1){
+function sort (arr, start = 0, right = arr.length){
 
     var pivot = arr[start];
     var swapIdx = start;
-    for(let i = start+1; i <=right; i++){
+    for(let i = start+1; i <right; i++){
         if(pivot > arr[i]){
             swapIdx++;
             let temp = arr[i];
